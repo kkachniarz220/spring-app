@@ -15,11 +15,13 @@ public class SecurityFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        if (request.getRemoteAddr().equals("127.0.0.1")) {
-            chain.doFilter(request, response);
-        } else {
-            response.getWriter().write("Access denied");
-        }
+        chain.doFilter(request, response);
+
+//        if (request.getRemoteAddr().equals("127.0.0.1")) {
+//            chain.doFilter(request, response);
+//        } else {
+//            response.getWriter().write("Access denied");
+//        }
 
     }
 
